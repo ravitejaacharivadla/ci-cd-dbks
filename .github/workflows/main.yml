@@ -29,7 +29,7 @@ jobs:
         
       - name: Configure Databricks authentication
         run: |
-          databricks auth login --host "$DATABRICKS_HOST" --token "$DATABRICKS_TOKEN
+          databricks auth login --host "$DATABRICKS_HOST" --token "$DATABRICKS_TOKEN"
 
       - name: Extract branch name
         id: extract_branch_dev
@@ -64,7 +64,7 @@ jobs:
 
       - name: Configure Databricks authentication
         run: |
-          databricks auth login --host "$DATABRICKS_HOST" --token "$DATABRICKS_TOKEN
+          databricks auth login --host "$DATABRICKS_HOST" --token "$DATABRICKS_TOKEN"
   
       - name: Extract branch name
         id: extract_branch_prod
