@@ -27,6 +27,12 @@ jobs:
       - name: Set up Databricks CLI
         uses: databricks/setup-cli@main
 
+      - name: Configure Databricks CLI (Dev)   # ✅ ADD THIS
+        run: |
+          databricks auth login \
+            --host "$DATABRICKS_HOST" \
+            --token "$DATABRICKS_TOKEN"
+
       - name: Extract branch name
         id: extract_branch_dev
         run: |
@@ -57,6 +63,12 @@ jobs:
   
       - name: Set up Databricks CLI
         uses: databricks/setup-cli@main
+        
+      - name: Configure Databricks CLI (Prod)   # ✅ ADD THIS
+        run: |
+          databricks auth login \
+            --host "$DATABRICKS_HOST" \
+            --token "$DATABRICKS_TOKEN"
   
       - name: Extract branch name
         id: extract_branch_prod
